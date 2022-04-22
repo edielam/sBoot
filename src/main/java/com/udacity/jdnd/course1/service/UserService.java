@@ -2,8 +2,6 @@ package com.udacity.jdnd.course1.service;
 
 import com.udacity.jdnd.course1.mapper.UserMapper;
 import com.udacity.jdnd.course1.model.User;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
