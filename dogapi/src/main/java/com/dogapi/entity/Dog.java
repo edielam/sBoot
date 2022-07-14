@@ -1,4 +1,4 @@
-package com.udacity.restfulapi.entity;
+package com.dogapi.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

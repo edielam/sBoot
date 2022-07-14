@@ -1,4 +1,4 @@
-package com.udacity.restfulapi.web;
+package com.dogapi.web;
 
 import org.springframework.web.bind.annotation.RestController;
 
