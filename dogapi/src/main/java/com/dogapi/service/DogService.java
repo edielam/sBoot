@@ -5,8 +5,9 @@ import com.dogapi.entity.Dog;
 import java.util.List;
 
 public interface DogService {
-    List<Dog> retrieveDogBreed();
-    List<Dog> retrieveDogById();
-    List<Dog> retrieveDogNames();
+    List<Dog> retrieveDogs();
+    List<String> retrieveDogBreed();
+    String retrieveDogById(Long id);
+    List<String> retrieveDogNames();
 
 }

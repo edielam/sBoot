@@ -16,18 +16,19 @@ public class DogServiceImplentation implements DogService {
         this.dogRepository = dogRepository;
     }
 
-    @Override
-    public List<Dog> retrieveDogBreed() {
+    public List<Dog> retrieveDogs() {
         return null;
     }
 
-    @Override
-    public List<Dog> retrieveDogById() {
+    public List<String> retrieveDogBreed() {
         return null;
     }
 
-    @Override
-    public List<Dog> retrieveDogNames() {
+    public String retrieveDogById(Long id) {
+        return null;
+    }
+
+    public List<String> retrieveDogNames() {
         return null;
     }
 }
