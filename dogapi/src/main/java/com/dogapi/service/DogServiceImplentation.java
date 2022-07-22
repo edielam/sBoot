@@ -25,6 +25,6 @@ public class DogServiceImplentation implements DogService {
     }
 
     public List<String> retrieveDogNames() {
-        return null;
+        return (List<String>) dogRepository.findAllName();
     }
 }
