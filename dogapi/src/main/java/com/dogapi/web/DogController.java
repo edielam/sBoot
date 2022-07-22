@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -30,5 +31,15 @@ public class DogController {
         return new ResponseEntity<List<String>>(dogBreed, HttpStatus.OK);
     }
 
-    @GetMapping("")
+    @GetMapping("/{id}/dogById")
+    public ResponseEntity<String> getDogById(@PathVariable Long id){
+        String dogById = dogService.retrieveDogById(id);
+        return new ResponseEntity<String>(dogById, HttpStatus.OK);
+    }
+
+    @GetMapping("/dogs/names")
+    public ResponseEntity<List<String>> getDogNames(){
+        List<String> names = dogService.retrieveDogNames();
+        return new ResponseEntity<List<String>>(names,HttpStatus.OK);
+    }
 }
