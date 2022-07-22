@@ -12,20 +12,16 @@ public class DogServiceImplentation implements DogService {
     @Autowired
     DogRepository dogRepository;
 
-    public DogServiceImplentation(DogRepository dogRepository) {
-        this.dogRepository = dogRepository;
-    }
-
     public List<Dog> retrieveDogs() {
-        return null;
+        return (List<Dog>) dogRepository.findAll();
     }
 
     public List<String> retrieveDogBreed() {
-        return null;
+        return (List<String>) dogRepository.findAllBreed();
     }
 
     public String retrieveDogById(Long id) {
-        return null;
+        return (String) dogRepository.findBreedById(id);
     }
 
     public List<String> retrieveDogNames() {
