@@ -13,6 +13,6 @@ public interface DogRepository extends CrudRepository<Dog, Long> {
     @Query("select d.id, d.breed from Dog d")
     List<String> findAllBreed();
 
-    @Query("select d.id, d.name from Dog d")
+    @Query("select id, name from Dog") //modified to serve as remembrance code for querying DB
     List<String> findAllName();
 }
