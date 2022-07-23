@@ -7,13 +7,10 @@ type Dog {
 
 type Query{
     findAll: [Dog]!
-    findBreedById: String!
-    findAllBreed: [String]!
-    findAllNames: [String]!
+    findBreedById(id:ID!): String!
 }
 
 type Mutation{
-    newDog(name: String!, breed: String!, origin: String!) : Dog!
-    deleteDogBreed(id:ID!) : Boolean
+    deleteDogBreed(breed:String!) : Boolean
     updateDogName(newName: String!, id:ID!) : Dog!
 }
