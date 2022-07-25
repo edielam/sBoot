@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DoggraphqlApplication {
+public class DogGraphQlApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DoggraphqlApplication.class, args);
+		SpringApplication.run(DogGraphQlApplication.class, args);
 	}
 
 }

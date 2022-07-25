@@ -8,8 +8,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-;
-
 public class DogNotFoundException extends RuntimeException implements GraphQLError {
 
     private Map<String, Object> extensions = new HashMap<>();

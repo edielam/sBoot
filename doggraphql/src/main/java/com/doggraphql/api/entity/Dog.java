@@ -1,9 +1,6 @@
 package com.doggraphql.api.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Dog {
@@ -15,9 +12,6 @@ public class Dog {
     private String breed;
     private String origin;
 
-    public Dog() {
-    }
-
     public Dog(Long id, String name, String breed, String origin) {
         this.id = id;
         this.name = name;
@@ -25,11 +19,12 @@ public class Dog {
         this.origin = origin;
     }
 
-    public Dog(String name, String breed, String origin) {
+    public Dog(String name, String breed) {
         this.name = name;
         this.breed = breed;
-        this.origin = origin;
     }
+
+    public Dog() {}
 
     public Long getId() {
         return id;

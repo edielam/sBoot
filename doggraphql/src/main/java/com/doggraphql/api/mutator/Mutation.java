@@ -2,6 +2,8 @@ package com.doggraphql.api.mutator;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.doggraphql.api.entity.Dog;
+import com.doggraphql.api.exception.BreedNotFoundException;
+import com.doggraphql.api.exception.DogNotFoundException;
 import com.doggraphql.api.repository.DogRepository;
 import org.springframework.stereotype.Component;
 
@@ -20,11 +22,11 @@ public class Mutation implements GraphQLMutationResolver {
         Iterable<Dog> allDogs = dogRepository.findAll();
         // Loop through all dogs to check their breed
         for (Dog d:allDogs) {
-            if (d.getBreed().equals(breed)) {
-                // Delete if the breed is found
-                dogRepository.delete(d);
-                deleted = true;
-            }
+           if (d.getBreed().equals(breed)) {
+               // Delete if the breed is found
+               dogRepository.delete(d);
+               deleted = true;
+           }
         }
         // Throw an exception if the breed doesn't exist
         if (!deleted) {
