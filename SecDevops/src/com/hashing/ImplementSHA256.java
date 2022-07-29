@@ -8,8 +8,9 @@ public class ImplementSHA256 {
     public static void main(String[] args) {
         String myPassword = "yooWhatsapp";
         String securePasswordOne = get_SecurePasswordMinusSalt(myPassword);
-        String securePasswordTwo =
+        String securePasswordTwo = get_SecurePassword(myPassword, createSalt());
         System.out.println(securePasswordOne);
+        System.out.println(securePasswordTwo);
     }
     // Method to generate a Salt
     private static byte[] createSalt() {
