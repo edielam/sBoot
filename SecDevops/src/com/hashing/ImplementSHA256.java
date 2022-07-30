@@ -20,8 +20,7 @@ public class ImplementSHA256 {
         return salt;
     }
 
-    // Method to generate the hash.
-//It takes a password and the Salt as input arguments
+    // Method to generate the hash without salting.
     private static String get_SecurePasswordMinusSalt(String passwordToHash){
         String generatedPassword = null;
         try {
@@ -39,6 +38,7 @@ public class ImplementSHA256 {
         }
         return generatedPassword;
     }
+    // Method to generate the hash with salting.
     private static String get_SecurePassword(String passwordToHash, byte[] salt){
         String generatedPassword = null;
         try {
