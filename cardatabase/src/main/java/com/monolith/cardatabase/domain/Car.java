@@ -8,20 +8,30 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String brand, model, color, registerNumber;
-    private int year;
-    private double price;
-    @Column(name = "Explanation", nullable = false, length = 256)
-    private String description;
+    private int years;
+    private int price;
+//    @Column(name = "Explanation", nullable = false, length = 256)
+//    private String description;
 
     public Car() {
     }
 
-    public Car(String brand, String model, String color, String registerNumber, int year, double price) {
+    public Car(String brand, String model, String color, String registerNumber, int years, int price) {
         this.brand = brand;
         this.model = model;
         this.color = color;
         this.registerNumber = registerNumber;
-        this.year = year;
+        this.years = years;
+        this.price = price;
+    }
+
+    public Car(long id, String brand, String model, String color, String registerNumber, int years, int price) {
+        this.id = id;
+        this.brand = brand;
+        this.model = model;
+        this.color = color;
+        this.registerNumber = registerNumber;
+        this.years = years;
         this.price = price;
     }
 
@@ -66,18 +76,18 @@ public class Car {
     }
 
     public int getYear() {
-        return year;
+        return years;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setYear(int years) {
+        this.years = years;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 }
