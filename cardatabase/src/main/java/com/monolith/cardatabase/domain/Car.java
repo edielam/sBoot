@@ -10,7 +10,7 @@ public class Car {
     private String brand, model, color, registerNumber;
     private int year;
     private double price;
-    @Column(name = "Explanation", nullable = false)
+    @Column(name = "Explanation", nullable = false, length = 256)
     private String description;
 
 
