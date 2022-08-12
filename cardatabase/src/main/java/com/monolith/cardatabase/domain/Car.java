@@ -24,17 +24,7 @@ public class Car {
         this.years = years;
         this.price = price;
     }
-
-    public Car(long id, String brand, String model, String color, String registerNumber, int years, int price) {
-        this.id = id;
-        this.brand = brand;
-        this.model = model;
-        this.color = color;
-        this.registerNumber = registerNumber;
-        this.years = years;
-        this.price = price;
-    }
-
+    
     public long getId() {
         return id;
     }
