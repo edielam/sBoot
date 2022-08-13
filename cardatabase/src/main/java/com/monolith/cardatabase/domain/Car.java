@@ -24,7 +24,7 @@ public class Car {
         this.years = years;
         this.price = price;
     }
-    
+
     public long getId() {
         return id;
     }
