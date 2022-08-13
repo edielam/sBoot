@@ -12,10 +12,10 @@ public class CarController {
 
     @Autowired
     private CarRepository carRepository;
-    
+
     @GetMapping("/cars")
     public Iterable<Car> getCars(){
-
+        return carRepository.findAll();
     }
 
 }
