@@ -1,7 +1,7 @@
 package com.monolith.cardatabase;
 
 import com.monolith.cardatabase.domain.Car;
-import com.monolith.cardatabase.domain.CarRepository;
+import com.monolith.cardatabase.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
