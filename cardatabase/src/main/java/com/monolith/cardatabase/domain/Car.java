@@ -10,9 +10,12 @@ public class Car {
     private String brand, model, color, registerNumber;
     private int years;
     private int price;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "Owner")
+    private Owner owner;
 //    @Column(name = "Explanation", nullable = false, length = 256)
 //    private String description;
-
     public Car() {
     }
 
@@ -65,11 +68,11 @@ public class Car {
         this.registerNumber = registerNumber;
     }
 
-    public int getYear() {
+    public int getYears() {
         return years;
     }
 
-    public void setYear(int years) {
+    public void setYears(int years) {
         this.years = years;
     }
 
@@ -79,5 +82,13 @@ public class Car {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
     }
 }
