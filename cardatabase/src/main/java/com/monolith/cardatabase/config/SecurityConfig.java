@@ -47,6 +47,7 @@ public class SecurityConfig extends
         config.setAllowedOrigins(Arrays.asList("*"));
         config.setAllowedMethods(Arrays.asList("*"));
         config.setAllowedHeaders(Arrays.asList("*"));
+        config.setAllowCredentials(false);
         config.applyPermitDefaultValues();
         source.registerCorsConfiguration("/**", config);
         return source;
@@ -54,7 +55,7 @@ public class SecurityConfig extends
     }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable()
+        http.csrf().disable().cors().and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
