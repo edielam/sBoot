@@ -45,6 +45,12 @@ public class SecurityConfig extends
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowedOrigins(Arrays.asList("*"));
+        config.setAllowedMethods(Arrays.asList("*"));
+        config.setAllowedHeaders(Arrays.asList("*"));
+        config.applyPermitDefaultValues();
+        source.registerCorsConfiguration("/**", config);
+        return source;
+        // localhost:3000 is allowed ==> config.setAllowedOrigins(Arrays.asList ("http://localhost:3000"));
     }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
