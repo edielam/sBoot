@@ -21,7 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     UserDetailsServiceImpl userDetailsService;
     @Autowired
-    private AuthenticationFilter authenticationFilter;
+    private AuthenticationFilter authFilter;
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception{
         auth.userDetailsService(userDetailsService).passwordEncoder(new BCryptPasswordEncoder());
@@ -40,6 +40,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // POST request to /login endpoint is not secured
                 .antMatchers(HttpMethod.POST, "/login").permitAll()
                 .anyRequest().authenticated().and()
-                .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
     }
 }
