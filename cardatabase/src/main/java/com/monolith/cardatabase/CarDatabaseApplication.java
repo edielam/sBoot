@@ -52,7 +52,7 @@ public class CarDatabaseApplication implements CommandLineRunner {
 		userRepository.save(new User("user",
 				"$2a$10$NVM0n8ElaRgg7zWO1CxUdei7vWoPg91Lz2aYavh9.f9q0e4bRadue","USER"));
 
-				// Username: admin, password: admin
+		// Username: admin, password: ed123
 		userRepository.save(new User("admin",
 				"$2a$12$gEXiT5yrirIFil8CfVIiHOfjjGqr0gYLXYzWfE7lXzgHXDT6y506q", "ADMIN"));
 	}
