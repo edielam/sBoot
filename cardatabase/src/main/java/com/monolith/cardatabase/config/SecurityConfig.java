@@ -1,5 +1,6 @@
 package com.monolith.cardatabase.config;
 
+import com.monolith.cardatabase.AuthenticationFilter;
 import com.monolith.cardatabase.services.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -12,11 +13,14 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends
         WebSecurityConfigurerAdapter {
+    @Autowired
+    private AuthenticationFilter authenticationFilter;
     @Autowired
     private UserDetailsServiceImpl userDetailsService;
     @Autowired
@@ -40,6 +44,8 @@ public class SecurityConfig extends
                 .antMatchers(HttpMethod.POST, "/login").
                 permitAll()
                 // All other requests are secured
-                .anyRequest().authenticated();
+                .anyRequest().authenticated().and()
+                .addFilterBefore(authenticationFilter,
+                        UsernamePasswordAuthenticationFilter.class);;
     }
 }
