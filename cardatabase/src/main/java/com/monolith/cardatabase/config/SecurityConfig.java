@@ -1,5 +1,6 @@
 package com.monolith.cardatabase.config;
 
+import com.monolith.cardatabase.AuthEntryPoint;
 import com.monolith.cardatabase.AuthenticationFilter;
 import com.monolith.cardatabase.services.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +23,11 @@ public class SecurityConfig extends
     @Autowired
     private AuthenticationFilter authenticationFilter;
     @Autowired
+    private AuthEntryPoint authEntryPoint;
+    @Autowired
     private UserDetailsServiceImpl userDetailsService;
     @Autowired
-    public void configureGlobal
-            (AuthenticationManagerBuilder auth)
-            throws Exception {
+    public void configureGlobal (AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService)
                 .passwordEncoder(new BCryptPasswordEncoder());
     }
