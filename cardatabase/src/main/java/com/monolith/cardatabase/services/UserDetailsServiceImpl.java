@@ -10,23 +10,27 @@ import org.springframework.stereotype.Service;
 import org.springframework.security.core.userdetails.User.UserBuilder;
 
 import java.util.Optional;
-
 @Service
-public class UserDetailsServiceImpl implements UserDetailsService {
+public class UserDetailsServiceImpl implements
+        UserDetailsService {
     @Autowired
-    UserRepository userRepository;
-
+    private UserRepository repository;
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<User> userA = userRepository.findByUsername(username);
+    public UserDetails loadUserByUsername(String
+                                                  username)
+            throws UsernameNotFoundException {
+        Optional<User> user =
+                repository.findByUsername(username);
         UserBuilder builder = null;
-        if(userA.isPresent()){
-            User currentUser = userA.get();
-            builder = org.springframework.security.core.userdetails.User.withUsername(username);
+        if (user.isPresent()) {
+            User currentUser = user.get();
+            builder =
+                    org.springframework.security.core.userdetails.
+                            User.withUsername(username);
             builder.password(currentUser.getPassword());
             builder.roles(currentUser.getRole());
         } else {
-            throw new UsernameNotFoundException("User not found");
+            throw new UsernameNotFoundException("User not found.");
         }
         return builder.build();
     }
