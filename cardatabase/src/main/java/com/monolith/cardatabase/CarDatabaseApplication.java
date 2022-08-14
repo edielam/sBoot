@@ -4,6 +4,7 @@ import com.monolith.cardatabase.domain.Car;
 import com.monolith.cardatabase.domain.Owner;
 import com.monolith.cardatabase.repository.CarRepository;
 import com.monolith.cardatabase.repository.OwnerRepository;
+import com.monolith.cardatabase.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,6 +20,8 @@ public class CarDatabaseApplication implements CommandLineRunner {
 	private CarRepository carRepository;
 	@Autowired
 	private OwnerRepository ownerRepository;
+	@Autowired
+	private UserRepository userRepository;
 	public static void main(String[] args) {
 		SpringApplication.run(CarDatabaseApplication.class, args);
 	}
