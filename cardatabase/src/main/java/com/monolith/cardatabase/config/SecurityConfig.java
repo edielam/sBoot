@@ -23,7 +23,7 @@ public class SecurityConfig extends
     @Autowired
     private AuthenticationFilter authenticationFilter;
     @Autowired
-    private AuthEntryPoint authEntryPoint;
+    private AuthEntryPoint exceptionHandler;
     @Autowired
     private UserDetailsServiceImpl userDetailsService;
     @Autowired
@@ -46,6 +46,8 @@ public class SecurityConfig extends
                 permitAll()
                 // All other requests are secured
                 .anyRequest().authenticated().and()
+                .exceptionHandling()
+                .authenticationEntryPoint(exceptionHandler).and()
                 .addFilterBefore(authenticationFilter,
                         UsernamePasswordAuthenticationFilter.class);;
     }
