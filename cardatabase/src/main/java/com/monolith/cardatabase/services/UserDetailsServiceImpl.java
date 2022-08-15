@@ -1,6 +1,6 @@
 package com.monolith.cardatabase.services;
 
-import com.monolith.cardatabase.domain.User;
+import com.monolith.cardatabase.domain.Users;
 import com.monolith.cardatabase.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,18 +19,18 @@ public class UserDetailsServiceImpl implements
     public UserDetails loadUserByUsername(String
                                                   username)
             throws UsernameNotFoundException {
-        Optional<User> user =
+        Optional<Users> user =
                 repository.findByUsername(username);
         UserBuilder builder = null;
         if (user.isPresent()) {
-            User currentUser = user.get();
+            Users currentUsers = user.get();
             builder =
                     org.springframework.security.core.userdetails.
                             User.withUsername(username);
-            builder.password(currentUser.getPassword());
-            builder.roles(currentUser.getRole());
+            builder.password(currentUsers.getPassword());
+            builder.roles(currentUsers.getRole());
         } else {
-            throw new UsernameNotFoundException("User not found.");
+            throw new UsernameNotFoundException("Users not found.");
         }
         return builder.build();
     }

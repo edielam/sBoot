@@ -2,7 +2,7 @@ package com.monolith.cardatabase;
 
 import com.monolith.cardatabase.domain.Car;
 import com.monolith.cardatabase.domain.Owner;
-import com.monolith.cardatabase.domain.User;
+import com.monolith.cardatabase.domain.Users;
 import com.monolith.cardatabase.repository.CarRepository;
 import com.monolith.cardatabase.repository.OwnerRepository;
 import com.monolith.cardatabase.repository.UserRepository;
@@ -49,11 +49,11 @@ public class CarDatabaseApplication implements CommandLineRunner {
 			log.info(car.getBrand() +" "+ car.getModel());
 		}
 		// Username: user, password: user
-		userRepository.save(new User("user",
+		userRepository.save(new Users("user",
 				"$2a$10$NVM0n8ElaRgg7zWO1CxUdei7vWoPg91Lz2aYavh9.f9q0e4bRadue","USER"));
 
 		// Username: admin, password: ed123
-		userRepository.save(new User("admin",
+		userRepository.save(new Users("admin",
 				"$2a$12$gEXiT5yrirIFil8CfVIiHOfjjGqr0gYLXYzWfE7lXzgHXDT6y506q", "ADMIN"));
 	}
 }

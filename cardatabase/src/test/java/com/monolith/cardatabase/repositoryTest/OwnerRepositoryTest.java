@@ -19,4 +19,10 @@ public class OwnerRepositoryTest {
         assertThat(ownerRepository.findByFirstName("Rose").isPresent())
                 .isTrue();
     }
+    @Test
+    void deleteOwners() {
+        ownerRepository.save(new Owner("Lisa", "Morrison"));
+        ownerRepository.deleteAll();
+        assertThat(ownerRepository.count()).isEqualTo(0);
+    }
 }
