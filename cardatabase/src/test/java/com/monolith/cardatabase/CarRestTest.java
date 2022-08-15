@@ -21,7 +21,7 @@ public class CarRestTest {
         // Testing authentication with correct credentials
         this.mockMvc.
                 perform(post("/login").
-                        content("{\"username\":\"admin\",\"password\":\"admin\"}").
+                        content("{\"username\":\"admin\",\"password\":\"ed123\"}").
                         header(HttpHeaders.CONTENT_TYPE,
                                 "application/json")).
                 andDo(print()).andExpect(status().isOk());
