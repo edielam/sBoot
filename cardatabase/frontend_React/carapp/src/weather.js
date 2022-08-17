@@ -23,7 +23,7 @@ function Weather() {
             <div className="App">
             <p>Temperature: {temp} °C</p>
             <p>Description: {desc}</p>
-            <img src={'http://openweathermap.org/img/wn/${icon}@2x.png'} 
+            <img src={'https://res.cloudinary.com/dtpgi0zck/image/upload/s--eWjIe4k---/c_fill,h_260,w_380/v1/EducationHub/photos/lightning-bolts.jpg'} 
             alt="Weather icon" />
             </div>
     );
