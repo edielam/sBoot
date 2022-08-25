@@ -24,7 +24,8 @@ const columns = [
             onChange={e => setKeyword(e.target.value)} />
             <button onClick={fetchData}>Fetch</button>
             <div className='ag-theme-material' style={{height: 500, width: '90%'}}>
-                <AgGridReact rowData={data} columnDefs={columns}/>
+                <AgGridReact rowData={data} columnDefs={columns}
+                pagination={true} paginationPageSize={5}/>
             </div>
         </div>
         );
