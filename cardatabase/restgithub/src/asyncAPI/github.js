@@ -14,8 +14,8 @@ function Github() {
         .catch(err => console.error(err))
     }
 const columns = [
-    {field: 'full_name'},
-    {field: 'html_url'},
+    {field: 'full_name', sortable: true, filter: true},
+    {field: 'html_url', sortable: true, filter: true},
     {field: 'owner.login'}
     ]
     return (
