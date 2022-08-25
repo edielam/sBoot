@@ -16,7 +16,7 @@ function Github() {
 const columns = [
     {field: 'full_name', sortable: true, filter: true},
     {field: 'html_url', sortable: true, filter: true},
-    {field: 'owner.login'}
+    {field: 'owner.login', sortable: true, filter:true}
     ]
     return (
         <div className="App">
