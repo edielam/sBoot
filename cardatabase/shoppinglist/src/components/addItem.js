@@ -33,7 +33,7 @@ function AddItem(props){
                 darker: '#053e85',
                 },
                 neutral: {
-                main: '#64748B',
+                main: '#2E3B55',
                 contrastText: '#fff',
                 },
             },
