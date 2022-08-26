@@ -14,10 +14,14 @@ function AddItem(props){
         product: '',
         amount: ''
     })
-    const [items, setItems] = useState([]);
-    const addItem = (item) => {
-        setItems([item, ...items]);
+    const addItem = () => {
+        props.addItem(item);
+        setItem({product:'', amount:''});
+        handleClose();
      }
+    const handleChange = (e) => {
+        setItem({...item, [e.target.name]: e.target.value})
+    }
     return (
         <div>
             <Button onClick={handleOpen} color='inherit' variant="outlined">
@@ -25,7 +29,14 @@ function AddItem(props){
             </Button>
             <Dialog open={open} onClose={handleClose}>
                 <DialogTitle>New Item</DialogTitle>
-                <DialogContent></DialogContent>
+                <DialogContent>
+                <TextField value={item.product} margin="dense"
+                    onChange={handleChange} name="product" 
+                    label="Product" fullWidth />
+                    <TextField value={item.amount} margin="dense"
+                    onChange={handleChange} name="amount" 
+                    label="Amount" fullWidth />
+                </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color='inherit' variant="contained">
                     Cancel
