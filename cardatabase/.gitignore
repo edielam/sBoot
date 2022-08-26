@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### React ###
+/shoppinglist/node_modules/
