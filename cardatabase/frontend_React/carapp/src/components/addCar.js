@@ -13,6 +13,12 @@ function AddCar(props){
         years: '',
         price: ''
     })
+    const handleAdd = () => {
+        setOpen(true);
+    };
+    const handleClose = () => {
+        setOpen(false);
+    };
     return(
         <div>
 
