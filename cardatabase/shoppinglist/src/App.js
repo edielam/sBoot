@@ -3,6 +3,7 @@ import { AppBar, Typography, Toolbar } from '@mui/material';
 import './App.css';
 import { useState } from 'react';
 import AddItem from './components/AddItem';
+import Stack from '@mui/material/Stack';
 
 function App() {
   const [items, setItems] = useState([]);
@@ -18,7 +19,9 @@ function App() {
           </Typography>
         </Toolbar>
       </AppBar><br/>
-      <AddItem/>
+      <Stack alignItems='center'>
+      <AddItem addItem={addItem}/>
+      </Stack>
     </Container>
   );
 }

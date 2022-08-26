@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, TextField, Dialog, DialogActions, 
 DialogContent, DialogTitle } from "@mui/material";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function AddItem(props){
     const [open, setOpen] = useState(false);
@@ -22,6 +23,22 @@ function AddItem(props){
     const handleChange = (e) => {
         setItem({...item, [e.target.name]: e.target.value})
     }
+    const theme = createTheme({
+            status: {
+                danger: '#e53e3e',
+            },
+            palette: {
+                primary: {
+                main: '#0971f1',
+                darker: '#053e85',
+                },
+                neutral: {
+                main: '#64748B',
+                contrastText: '#fff',
+                },
+            },
+    });
+
     return (
         <div>
             <Button onClick={handleOpen} color='inherit' variant="outlined">
@@ -38,12 +55,14 @@ function AddItem(props){
                     label="Amount" fullWidth />
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose} color='inherit' variant="contained">
-                    Cancel
-                    </Button>
-                    <Button onClick={addItem} color='inherit' variant="contained">
-                    Add
-                    </Button>
+                    <ThemeProvider theme={theme}>
+                        <Button onClick={addItem} color='primary' variant="contained">
+                        Add
+                        </Button>
+                        <Button onClick={handleClose} color='neutral' variant="contained">
+                        Cancel
+                        </Button>
+                    </ThemeProvider>
                 </DialogActions>
             </Dialog>
         </div>
