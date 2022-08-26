@@ -8,7 +8,7 @@ function App() {
   return (
     <Container>
       <AppBar>
-        <Toolbar>
+        <Toolbar sx={{bgcolor: '#3E3B70'}}>
           <Typography variant='h6'>
             Ryd Garrage</Typography>
         </Toolbar>
