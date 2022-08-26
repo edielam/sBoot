@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { SERVER_URL } from "../constants/constants";
 import { DataGrid } from '@mui/x-data-grid';
-import { Button } from "@mui/material";
+import { Button, Snackbar } from "@mui/material";
 
 function CarList(){
     const [cars, setCars] = useState([]);
@@ -25,7 +25,7 @@ function CarList(){
             filterable: false,
             renderCell: row => 
             <Button color='primary' variant="contained"
-            onClick={() => onDelClick(row.id)}>Delete
+            onClick={() => onDelClick(row.id)} size="small">Delete
             </Button>
             }
     ]
@@ -42,15 +42,23 @@ function CarList(){
     
     const onDelClick =(url) => {
         fetch(url, {method: 'DELETE'})
-        .then(response => fetchCars())
+        .then(response => {fetchCars(); setOpen(true);})
         .catch(err => console.error(err));
     }
+    const [open, setOpen] = useState(false);
+
     return(
         <div  style={{ height: 500, width: '100%' }}>
             <DataGrid
             rows={cars}
             columns= {columns}
             getRowId={row => row._links.self.href}/>
+            <Snackbar
+            open={open}
+            autoHideDuration={2500}
+            onClose={() => setOpen(false)}
+            message="Removed successfully!"
+            />
         </div>
     );
 }
