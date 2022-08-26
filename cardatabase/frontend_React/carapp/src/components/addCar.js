@@ -9,6 +9,9 @@ function AddCar(props){
         brand: '',
         model: '',
         color: '',
+        registerNumber: '',
+        years: '',
+        price: ''
     })
     return(
         <div>
