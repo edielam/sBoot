@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-import DatePicker from "react-datepicker";
 import './App.css';
 
 function App() {

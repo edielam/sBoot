@@ -3,15 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Weather from './asyncAPI/weather';
-import Github from './asyncAPI/github';
 
 const root = ReactDOM.createRoot(document.getElementById('myRoot'));
 root.render(
   <React.StrictMode>
     <App />
-    <Weather/>
-    <Github/>
   </React.StrictMode>
 );
 
