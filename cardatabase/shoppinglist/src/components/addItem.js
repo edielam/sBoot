@@ -10,6 +10,10 @@ function AddItem(props){
     const handleClose = () => {
         setOpen(false);
     }
+    const [item, setItem] = useState({
+        product: '',
+        amount: ''
+    })
     const [items, setItems] = useState([]);
     const addItem = (item) => {
         setItems([item, ...items]);
