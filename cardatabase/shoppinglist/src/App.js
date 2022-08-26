@@ -6,7 +6,7 @@ function App() {
   return (
     <Container>
       <AppBar position='static'>
-        <Toolbar>
+        <Toolbar sx={{bgcolor: '#2E3B55'}}>
           <Typography variant='h6'>
             Shopping List
           </Typography>
