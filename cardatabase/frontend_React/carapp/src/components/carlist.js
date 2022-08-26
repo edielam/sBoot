@@ -41,11 +41,11 @@ function CarList(){
     }, []);
     
     const onDelClick =(url) => {
-        if (window.confirm("Are you sure to delete?")) {
+        if (window.confirm("Please Confirm")) {
             fetch(url, {method: 'DELETE'})
             .then(response => {if(response.ok){fetchCars(); setOpen(true);}
             else {
-                alert('Something went wrsong!');
+                alert('Something went wrong!');
                 }
             })
             .catch(err => console.error(err))
