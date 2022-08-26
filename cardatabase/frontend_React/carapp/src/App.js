@@ -1,10 +1,19 @@
 import './App.css';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import { Container } from '@mui/system';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello Ed</h1>
-    </div>
+    <Container>
+      <AppBar>
+        <Toolbar>
+          <Typography variant='h6'>
+            Ryd Garrage</Typography>
+        </Toolbar>
+      </AppBar>
+    </Container>
   );
 }
 
