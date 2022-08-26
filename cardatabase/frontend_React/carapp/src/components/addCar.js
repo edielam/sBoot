@@ -19,3 +19,4 @@ function AddCar(props){
         </div>
     )
 }
+export default AddCar;
