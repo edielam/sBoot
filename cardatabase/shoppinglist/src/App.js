@@ -17,7 +17,7 @@ function App() {
             Shopping List
           </Typography>
         </Toolbar>
-      </AppBar>
+      </AppBar><br/>
       <AddItem/>
     </Container>
   );
