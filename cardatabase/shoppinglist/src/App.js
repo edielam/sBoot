@@ -2,6 +2,7 @@ import Container from '@mui/material/Container';
 import { AppBar, Typography, Toolbar } from '@mui/material';
 import './App.css';
 import { useState } from 'react';
+import AddItem from './components/AddItem';
 
 function App() {
   const [items, setItems] = useState([]);
@@ -17,6 +18,7 @@ function App() {
           </Typography>
         </Toolbar>
       </AppBar>
+      <AddItem/>
     </Container>
   );
 }
