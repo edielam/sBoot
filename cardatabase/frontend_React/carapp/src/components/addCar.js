@@ -50,10 +50,15 @@ function AddCar(props){
                 <br/>
                 <input placeholder="Price" name="price" 
                 value={car.price} onChange={handleChange}/>
-                
+                <br/>
                 </DialogContent>
                 <DialogActions>
-
+                    <ThemeProvider theme={theme}>
+                        <Button color='primary' variant="contained"
+                        onClick={handleAdd} size="small">Cancel</Button>
+                        <Button color='primary' variant="outlined"
+                        onClick={handleAdd} size="small">Save</Button>
+                </ThemeProvider>
                 </DialogActions>
              </Dialog>
         </div>
