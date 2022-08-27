@@ -38,36 +38,36 @@ function AddCar(props){
                 <DialogTitle>New Car</DialogTitle>
                 <DialogContent>
                 <TextField autoFocus
-                    margin="normal" id="brand" label="Brand"
+                    margin="normal" id="brand" fullWidth label="Brand"
                     type="email" variant="filled" onChange={handleChange}
                 /><br/>
                 <TextField autoFocus
-                    margin="normal" id="model" label="Model"
+                    margin="normal" id="model" label="Model" fullWidth
                     type="email" variant="filled" onChange={handleChange}
                 /><br/>
                 <TextField autoFocus
-                    margin="normal" id="color" label="Color"
+                    margin="normal" id="color" label="Color" fullWidth
                     type="email" variant="filled" onChange={handleChange}
                 /><br/>
                 <TextField autoFocus
                     margin="normal" id="registerNumber" label="Register Number"
+                    type="email" variant="filled" onChange={handleChange} fullWidth
+                /><br/>
+                <TextField autoFocus
+                    margin="normal" id="years" label="Year" fullWidth
                     type="email" variant="filled" onChange={handleChange}
                 /><br/>
                 <TextField autoFocus
-                    margin="normal" id="years" label="Year"
-                    type="email" variant="filled" onChange={handleChange}
-                /><br/>
-                <TextField autoFocus
-                    margin="normal" id="price" label="Price"
+                    margin="normal" id="price" label="Price" fullWidth
                     type="email" variant="filled" onChange={handleChange}
                 /><br/>
                 </DialogContent>
                 <DialogActions>
                     <ThemeProvider theme={theme}>
                         <Button color='primary' variant="contained"
-                        onClick={handleClose} size="small">Cancel</Button>
+                        onClick={handleClose} size='medium'>Cancel</Button>
                         <Button color='primary' variant="outlined"
-                        onClick={handleSave} size="small">Save</Button>
+                        onClick={handleSave} size='medium'>Save</Button>
                 </ThemeProvider>
                 </DialogActions>
              </Dialog>

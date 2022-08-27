@@ -54,29 +54,29 @@ function CarList(){
             }
     }
     const [open, setOpen] = useState(false);
-    const addTheCar= (car) => {
-        fetch(SERVER_URL ='api/cars', {
-            method: 'POST',
-            headers: { 'Content-Type':'application/json' },
-            body: JSON.stringify(car)
+    const addCar = (car) => {
+        fetch(SERVER_URL + 'api/cars',
+        {
+        method: 'POST', 
+        headers: { 'Content-Type':'application/json' },
+        body: JSON.stringify(car)
         })
         .then(response => {
-            if(response.ok){
-                fetchCars();
-            }
-            else{
-                <Alert severity="error">
-                    <AlertTitle>Error</AlertTitle>
-                    Something went <strong>wrong!</strong>
-                </Alert>
-            }
-        })
+        if (response.ok) {
+        fetchCars();
+        }
+        else {
+            <Alert severity="error">
+                <AlertTitle>Error</AlertTitle>
+                Something went <strong>wrong!</strong>
+            </Alert>
+        }
+    })
         .catch(err => console.error(err))
     }
-
     return(
         <Fragment>
-            <AddCar addCar={addTheCar}/><br/>
+            <AddCar addCar={addCar}/><br/>
             <div  style={{ height: 500, width: '100%' }}>
             <DataGrid
             rows={cars}
