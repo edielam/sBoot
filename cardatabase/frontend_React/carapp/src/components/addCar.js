@@ -42,6 +42,15 @@ function AddCar(props){
                 <input placeholder="Color" name="color" 
                 value={car.color} onChange={handleChange}/>
                 <br/>
+                <input placeholder="Register Number" name="registerNumber" 
+                value={car.registerNumber} onChange={handleChange}
+                /><br/>
+                <input placeholder="Year" name="years" 
+                value={car.years} onChange={handleChange}/>
+                <br/>
+                <input placeholder="Price" name="price" 
+                value={car.price} onChange={handleChange}/>
+                
                 </DialogContent>
                 <DialogActions>
 
