@@ -38,7 +38,7 @@ function AddCar(props){
                 <DialogTitle>New Car</DialogTitle>
                 <DialogContent>
                 <TextField autoFocus
-                    margin="dense" id="brand" label="Brand"
+                    margin="normal" id="brand" label="Brand"
                     type="email" variant="filled"
                 /><br/>
                 <input placeholder="Brand" name="brand" 
