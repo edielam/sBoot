@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { SERVER_URL } from "../constants/constants";
 import { DataGrid} from '@mui/x-data-grid';
-import { Button, Snackbar } from "@mui/material";
+import { Alert, AlertTitle, Button, Snackbar } from "@mui/material";
 
 function CarList(){
     const [cars, setCars] = useState([]);
@@ -62,6 +62,12 @@ function CarList(){
         .then(response => {
             if(response.ok){
                 fetchCars();
+            }
+            else{
+                <Alert severity="error">
+                    <AlertTitle>Error</AlertTitle>
+                    This is an error alert — <strong>check it out!</strong>
+                </Alert>
             }
         })
     }
