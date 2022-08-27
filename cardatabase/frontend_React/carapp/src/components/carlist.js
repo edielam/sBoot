@@ -66,10 +66,11 @@ function CarList(){
             else{
                 <Alert severity="error">
                     <AlertTitle>Error</AlertTitle>
-                    This is an error alert — <strong>check it out!</strong>
+                    Something went <strong>wrong!</strong>
                 </Alert>
             }
         })
+        .catch(err => console.error(err))
     }
 
     return(
