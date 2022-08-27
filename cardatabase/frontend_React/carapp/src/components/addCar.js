@@ -30,13 +30,13 @@ function AddCar(props){
                 onClick={handleAdd} size="small">New Car
                 </Button>
             </ThemeProvider>
-             <Dialog>
+             <Dialog open={open} onClose={handleClose}>
                 <DialogTitle>New Car</DialogTitle>
                 <DialogContent>
 
                 </DialogContent>
                 <DialogActions>
-                    
+
                 </DialogActions>
              </Dialog>
         </div>
