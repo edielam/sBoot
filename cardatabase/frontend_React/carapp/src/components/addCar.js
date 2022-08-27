@@ -37,48 +37,44 @@ function AddCar(props){
              <Dialog open={open} onClose={handleClose} maxWidth='xs' fullWidth='true'>
                 <DialogTitle>New Car</DialogTitle>
                 <DialogContent>
-                <input placeholder="Brand" name="brand" 
-                value={car.brand} onChange={handleChange}
-                /><br/> 
-                <input placeholder="Model" name="model" 
-                value={car.model} onChange={handleChange}
-                /><br/>
-                <input placeholder="Color" name="color" 
-                value={car.color} onChange={handleChange}/>
-                <br/>
-                <input placeholder="Year" name="year" 
-                value={car.year} onChange={handleChange}/>
-                <br/>
-                <input placeholder="Price" name="price" 
-                value={car.price} onChange={handleChange}/>
-                <br/>
-                <TextField autoFocus
-                    margin="normal" value={car.brand} fullWidth label="Brand"
-                    type="email" variant="filled" onChange={(e) => setCar(e.target.value)}
-                /><br/>
+                    <input placeholder="Brand" name="brand" 
+                    value={car.brand} onChange={handleChange}
+                    /><br/> 
+                    <input placeholder="Model" name="model" 
+                    value={car.model} onChange={handleChange}
+                    /><br/>
+                    <input placeholder="Color" name="color" 
+                    value={car.color} onChange={handleChange}/>
+                    <br/>
+                    <input placeholder="Year" name="year" 
+                    value={car.year} onChange={handleChange}/>
+                    <br/>
+                    <input placeholder="Price" name="price" 
+                    value={car.price} onChange={handleChange}/>
+                    <br/>
                 {/* <TextField autoFocus
-                    margin="normal" id="brand" value={car.brand} fullWidth label="Brand"
-                    type="email" variant="filled" onChange={(e) => setCar(e.target.value)}
+                    margin="normal" value={car.brand} fullWidth label="Brand"
+                    type="email" variant="filled"  onChange={handleChange}
                 /><br/>
                 <TextField autoFocus
-                    margin="normal" id="model" value={car.model} label="Model" fullWidth
-                    type="email" variant="filled" onChange={(e) => setCar(e.target.value)}
+                    margin="normal" value={car.model} label="Model" fullWidth
+                    type="email" variant="filled"  onChange={handleChange}
                 /><br/>
                 <TextField autoFocus
-                    margin="normal" id="color" value={car.color} label="Color" fullWidth
-                    type="email" variant="filled" onChange={(e) => setCar(e.target.value)}
+                    margin="normal" value={car.color} label="Color" fullWidth
+                    type="email" variant="filled"  onChange={handleChange}
                 /><br/>
                 <TextField autoFocus
-                    margin="normal" id="registerNumber" value={car.registerNumber} label="Register Number"
-                    type="email" variant="filled" onChange={(e) => setCar(e.target.value)} fullWidth
+                    margin="normal" value={car.registerNumber} label="Register Number"
+                    type="email" variant="filled"  onChange={handleChange} fullWidth
                 /><br/>
                 <TextField autoFocus
-                    margin="normal" id="years" value={car.years} label="Year" fullWidth
-                    type="email" variant="filled" onChange={(e) => setCar(e.target.value)}
+                    margin="normal" value={car.years} label="Year" fullWidth
+                    type="email" variant="filled"  onChange={handleChange}
                 /><br/>
                 <TextField autoFocus
-                    margin="normal" id="price" value={car.price} label="Price" fullWidth
-                    type="email" variant="filled" onChange={(e) => setCar(e.target.value)}
+                    margin="normal" value={car.price} label="Price" fullWidth
+                    type="email" variant="filled"  onChange={handleChange}
                 /><br/> */}
                 </DialogContent>
                 <DialogActions>
