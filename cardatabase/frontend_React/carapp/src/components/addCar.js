@@ -23,13 +23,6 @@ function AddCar(props){
     const handleChange = (event) =>{
         setCar({...car, [event.target.name]: event.target.value});
     }
-    const addTheCar= (car) => {
-        fetch(SERVER_URL ='api/cars', {
-            method: 'POST',
-            headers: { 'Content-Type':'application/json' },
-            body: JSON.stringify(car)
-        })
-    }
     return(
         <div>
             <ThemeProvider theme={theme}>

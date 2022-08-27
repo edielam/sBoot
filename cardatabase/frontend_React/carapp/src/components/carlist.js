@@ -53,6 +53,18 @@ function CarList(){
             }
     }
     const [open, setOpen] = useState(false);
+    const addTheCar= (car) => {
+        fetch(SERVER_URL ='api/cars', {
+            method: 'POST',
+            headers: { 'Content-Type':'application/json' },
+            body: JSON.stringify(car)
+        })
+        .then(response => {
+            if(response.ok){
+                fetchCars();
+            }
+        })
+    }
 
     return(
         <div  style={{ height: 500, width: '100%' }}>
