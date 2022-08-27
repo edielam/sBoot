@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { SERVER_URL } from "../constants/constants";
 import { DataGrid} from '@mui/x-data-grid';
 import { Alert, AlertTitle, Button, Snackbar } from "@mui/material";
+import AddCar from "./addCar";
 
 function CarList(){
     const [cars, setCars] = useState([]);
@@ -74,7 +75,9 @@ function CarList(){
     }
 
     return(
-        <div  style={{ height: 500, width: '100%' }}>
+        <Fragment>
+            <AddCar addCar={addTheCar}/>
+            <div  style={{ height: 500, width: '100%' }}>
             <DataGrid
             rows={cars}
             columns= {columns}
@@ -86,6 +89,7 @@ function CarList(){
             message="Removed successfully!"
             />
         </div>
+        </Fragment>
     );
 }
 export default CarList;

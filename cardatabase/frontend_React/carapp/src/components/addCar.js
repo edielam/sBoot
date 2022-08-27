@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Dialog, DialogContent,
      DialogTitle, DialogActions, Button, ThemeProvider } from "@mui/material";
-import { SERVER_URL, theme } from "../constants/constants";
+import { theme } from "../constants/constants";
 
 
 function AddCar(props){
@@ -23,6 +23,10 @@ function AddCar(props){
     const handleChange = (event) =>{
         setCar({...car, [event.target.name]: event.target.value});
     }
+    const handleSave = () => {
+        props.addCar(car);
+        handleClose();
+       }
     return(
         <div>
             <ThemeProvider theme={theme}>
