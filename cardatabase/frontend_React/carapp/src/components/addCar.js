@@ -19,6 +19,9 @@ function AddCar(props){
     const handleClose = () => {
         setOpen(false);
     };
+    const handleChnage = (event) =>{
+        setCar({...car, [event.target.name]: event.target.value});
+    }
     return(
         <div>
 
