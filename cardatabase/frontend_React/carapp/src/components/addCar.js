@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Dialog, DialogContent,
-     DialogTitle, DialogActions, Button, ThemeProvider } from "@mui/material";
+     DialogTitle, DialogActions, Button, ThemeProvider, TextField } from "@mui/material";
 import { theme } from "../constants/constants";
 
 
@@ -37,6 +37,10 @@ function AddCar(props){
              <Dialog open={open} onClose={handleClose}>
                 <DialogTitle>New Car</DialogTitle>
                 <DialogContent>
+                <TextField autoFocus
+                    margin="dense" id="brand" label="Brand"
+                    type="email" variant="filled"
+                /><br/>
                 <input placeholder="Brand" name="brand" 
                 value={car.brand} onChange={handleChange}
                 /><br/> 

@@ -76,7 +76,7 @@ function CarList(){
 
     return(
         <Fragment>
-            <AddCar addCar={addTheCar}/>
+            <AddCar addCar={addTheCar}/><br/>
             <div  style={{ height: 500, width: '100%' }}>
             <DataGrid
             rows={cars}
