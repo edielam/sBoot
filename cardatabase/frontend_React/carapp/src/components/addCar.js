@@ -33,7 +33,15 @@ function AddCar(props){
              <Dialog open={open} onClose={handleClose}>
                 <DialogTitle>New Car</DialogTitle>
                 <DialogContent>
-
+                <input placeholder="Brand" name="brand" 
+                value={car.brand} onChange={handleChange}
+                /><br/> 
+                <input placeholder="Model" name="model" 
+                value={car.model} onChange={handleChange}
+                /><br/>
+                <input placeholder="Color" name="color" 
+                value={car.color} onChange={handleChange}/>
+                <br/>
                 </DialogContent>
                 <DialogActions>
 
