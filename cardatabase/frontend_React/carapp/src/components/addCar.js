@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Dialog, DialogContent,
-     DialogTitle, DialogActions } from "@mui/material";
+     DialogTitle, DialogActions, Button, ThemeProvider } from "@mui/material";
+import { theme } from "../constants/constants";
 
 
 function AddCar(props){
@@ -24,7 +25,11 @@ function AddCar(props){
     }
     return(
         <div>
-
+            <ThemeProvider theme={theme}>
+                <Button color='primary' variant="contained"
+                onClick={handleAdd} size="small">New Car
+                </Button>
+            </ThemeProvider>
         </div>
     )
 }
