@@ -34,31 +34,33 @@ function AddCar(props){
                 onClick={handleAdd} size="small">New Car
                 </Button>
             </ThemeProvider>
-             <Dialog open={open} onClose={handleClose}>
+             <Dialog open={open} onClose={handleClose} maxWidth='xs' fullWidth='true'>
                 <DialogTitle>New Car</DialogTitle>
                 <DialogContent>
                 <TextField autoFocus
                     margin="normal" id="brand" label="Brand"
-                    type="email" variant="filled"
+                    type="email" variant="filled" onChange={handleChange}
                 /><br/>
-                <input placeholder="Brand" name="brand" 
-                value={car.brand} onChange={handleChange}
-                /><br/> 
-                <input placeholder="Model" name="model" 
-                value={car.model} onChange={handleChange}
+                <TextField autoFocus
+                    margin="normal" id="model" label="Model"
+                    type="email" variant="filled" onChange={handleChange}
                 /><br/>
-                <input placeholder="Color" name="color" 
-                value={car.color} onChange={handleChange}/>
-                <br/>
-                <input placeholder="Register Number" name="registerNumber" 
-                value={car.registerNumber} onChange={handleChange}
+                <TextField autoFocus
+                    margin="normal" id="color" label="Color"
+                    type="email" variant="filled" onChange={handleChange}
                 /><br/>
-                <input placeholder="Year" name="years" 
-                value={car.years} onChange={handleChange}/>
-                <br/>
-                <input placeholder="Price" name="price" 
-                value={car.price} onChange={handleChange}/>
-                <br/>
+                <TextField autoFocus
+                    margin="normal" id="registerNumber" label="Register Number"
+                    type="email" variant="filled" onChange={handleChange}
+                /><br/>
+                <TextField autoFocus
+                    margin="normal" id="years" label="Year"
+                    type="email" variant="filled" onChange={handleChange}
+                /><br/>
+                <TextField autoFocus
+                    margin="normal" id="price" label="Price"
+                    type="email" variant="filled" onChange={handleChange}
+                /><br/>
                 </DialogContent>
                 <DialogActions>
                     <ThemeProvider theme={theme}>
