@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Dialog, DialogContent,
      DialogTitle, DialogActions, Button, ThemeProvider } from "@mui/material";
-import { theme } from "../constants/constants";
+import { SERVER_URL, theme } from "../constants/constants";
 
 
 function AddCar(props){
@@ -22,6 +22,13 @@ function AddCar(props){
     };
     const handleChange = (event) =>{
         setCar({...car, [event.target.name]: event.target.value});
+    }
+    const addTheCar= (car) => {
+        fetch(SERVER_URL ='api/cars', {
+            method: 'POST',
+            headers: { 'Content-Type':'application/json' },
+            body: JSON.stringify(car)
+        })
     }
     return(
         <div>
