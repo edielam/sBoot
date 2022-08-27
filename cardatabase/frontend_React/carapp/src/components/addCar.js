@@ -55,9 +55,9 @@ function AddCar(props){
                 <DialogActions>
                     <ThemeProvider theme={theme}>
                         <Button color='primary' variant="contained"
-                        onClick={handleAdd} size="small">Cancel</Button>
+                        onClick={handleClose} size="small">Cancel</Button>
                         <Button color='primary' variant="outlined"
-                        onClick={handleAdd} size="small">Save</Button>
+                        onClick={handleSave} size="small">Save</Button>
                 </ThemeProvider>
                 </DialogActions>
              </Dialog>
