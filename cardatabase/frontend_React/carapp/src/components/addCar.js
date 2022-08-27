@@ -20,7 +20,7 @@ function AddCar(props){
     const handleClose = () => {
         setOpen(false);
     };
-    const handleChnage = (event) =>{
+    const handleChange = (event) =>{
         setCar({...car, [event.target.name]: event.target.value});
     }
     return(
@@ -30,6 +30,7 @@ function AddCar(props){
                 onClick={handleAdd} size="small">New Car
                 </Button>
             </ThemeProvider>
+             
         </div>
     )
 }
