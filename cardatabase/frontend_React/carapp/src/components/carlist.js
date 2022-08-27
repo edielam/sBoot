@@ -54,7 +54,7 @@ function CarList(){
             }
     }
     const [open, setOpen] = useState(false);
-    const addCar = (car) => {
+    const addTheCar = (car) => {
         fetch(SERVER_URL + 'api/cars',
         {
         method: 'POST', 
@@ -76,7 +76,7 @@ function CarList(){
     }
     return(
         <Fragment>
-            <AddCar addCar={addCar}/><br/>
+            <AddCar addCar={addTheCar}/><br/>
             <div  style={{ height: 500, width: '100%' }}>
             <DataGrid
             rows={cars}
