@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { SERVER_URL } from "../constants/constants";
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid} from '@mui/x-data-grid';
 import { Button, Snackbar } from "@mui/material";
 
 function CarList(){
@@ -16,8 +16,8 @@ function CarList(){
         {field: 'model', headerName: 'Model', width: 200},
         {field: 'color', headerName: 'Color', width: 200},
         {field: 'registerNumber', headerName: 'Register Number', width: 200},
-        {field: 'years', headerName: 'Year', width: 150},
-        {field: 'price', headerName: 'Price', width: 150},
+        {field: 'years', headerName: 'Year', width: 200},
+        {field: 'price', headerName: 'Price', width: 200},
         {
             field: '_links.self.href', 
             headerName: '', 
@@ -26,7 +26,8 @@ function CarList(){
             renderCell: row => 
             <Button color='primary' variant="contained"
             onClick={() => onDelClick(row.id)} size="small">Delete
-            </Button>
+            </Button>,
+             width: 150
             }
     ]
 
