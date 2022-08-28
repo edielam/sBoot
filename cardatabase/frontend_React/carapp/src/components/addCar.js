@@ -49,9 +49,10 @@ function AddCar(props){
                     <input placeholder="Year" name="year" 
                     value={car.year} onChange={handleChange}/>
                     <br/>
-                    <input placeholder="Price" name="price" 
-                    value={car.price} onChange={handleChange}/>
-                    <br/>
+                    <TextField 
+                    id='filled-basic' margin="normal" value={car.price} label="Price" fullWidth
+                    type='text' variant="filled"  onChange={handleChange}
+                /><br/>
                 {/* <TextField autoFocus
                     margin="normal" value={car.brand} fullWidth label="Brand"
                     type="email" variant="filled"  onChange={handleChange}
