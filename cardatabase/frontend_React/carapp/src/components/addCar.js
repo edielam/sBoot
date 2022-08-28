@@ -37,22 +37,25 @@ function AddCar(props){
              <Dialog open={open} onClose={handleClose} maxWidth='xs' fullWidth='true'>
                 <DialogTitle>New Car</DialogTitle>
                 <DialogContent>
-                    <input placeholder="Brand" name="brand" 
-                    value={car.brand} onChange={handleChange}
-                    /><br/> 
-                    <input placeholder="Model" name="model" 
-                    value={car.model} onChange={handleChange}
-                    /><br/>
-                    <input placeholder="Color" name="color" 
-                    value={car.color} onChange={handleChange}/>
-                    <br/>
-                    <input placeholder="Year" name="year" 
-                    value={car.year} onChange={handleChange}/>
-                    <br/>
-                    <TextField 
-                    id='filled-basic' margin="normal" value={car.price} label="Price" fullWidth
-                    type='text' variant="filled"  onChange={handleChange}
+                <input placeholder="Brand" name="brand" 
+                value={car.brand} onChange={handleChange}
+                /><br/> 
+                <input placeholder="Model" name="model" 
+                value={car.model} onChange={handleChange}
                 /><br/>
+                <input placeholder="Color" name="color" 
+                value={car.color} onChange={handleChange}/>
+                <br/>
+                <input placeholder="Register Number" name="registerNumber" 
+                value={car.year} onChange={handleChange}/>
+                <br/>
+                <input placeholder="Year" name="years" 
+                value={car.year} onChange={handleChange}/>
+                <br/>
+                <input placeholder="Price" name="price" 
+                value={car.price} onChange={handleChange}/>
+                <br/>
+                
                 {/* <TextField autoFocus
                     margin="normal" value={car.brand} fullWidth label="Brand"
                     type="email" variant="filled"  onChange={handleChange}
