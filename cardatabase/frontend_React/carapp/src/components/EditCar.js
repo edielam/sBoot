@@ -31,7 +31,24 @@ function EditCar(props){
             <Dialog>
                 <DialogTitle>Change Car Details</DialogTitle>
                 <DialogContent>
-                    
+                <input placeholder="Brand" name="brand" 
+                value={car.brand}onChange={handleChange}
+                /><br/> 
+                <input placeholder="Model" name="model" 
+                value={car.model}onChange={handleChange}
+                /><br/>
+                <input placeholder="Color" name="color" 
+                value={car.color}onChange={handleChange}
+                /><br/>
+                <input placeholder="Register Number" name="registerNumber" 
+                value={car.registerNumber}onChange={handleChange}
+                /><br/>
+                <input placeholder="Year" name="years" 
+                value={car.year} 
+                onChange={handleChange}/><br/>
+                <input placeholder="Price" name="price" 
+                value={car.price}onChange={handleChange}
+                /><br/>
                 </DialogContent>
             </Dialog>
         </div>
