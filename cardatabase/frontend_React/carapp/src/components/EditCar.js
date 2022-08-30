@@ -10,6 +10,12 @@ function EditCar(props){
         brand: '', model: '', color: '', registerNumber: '',
         years: '', price: ''
     })
+    const handleClickOpen = () => {
+        setOpen(true);
+    }
+    const handleClickClose = () => {
+        setOpen(false);
+    }
     return (
         <div>
 
