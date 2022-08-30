@@ -51,30 +51,7 @@ function AddCar(props){
                     <TextField label="Price" name="price" 
                     variant="standard" value={car.price} onChange={handleChange}/>
                 </Stack>
-                {/* <TextField autoFocus
-                    margin="normal" value={car.brand} fullWidth label="Brand"
-                    type="email" variant="filled"  onChange={handleChange}
-                /><br/>
-                <TextField autoFocus
-                    margin="normal" value={car.model} label="Model" fullWidth
-                    type="email" variant="filled"  onChange={handleChange}
-                /><br/>
-                <TextField autoFocus
-                    margin="normal" value={car.color} label="Color" fullWidth
-                    type="email" variant="filled"  onChange={handleChange}
-                /><br/>
-                <TextField autoFocus
-                    margin="normal" value={car.registerNumber} label="Register Number"
-                    type="email" variant="filled"  onChange={handleChange} fullWidth
-                /><br/>
-                <TextField autoFocus
-                    margin="normal" value={car.years} label="Year" fullWidth
-                    type="email" variant="filled"  onChange={handleChange}
-                /><br/>
-                <TextField autoFocus
-                    margin="normal" value={car.price} label="Price" fullWidth
-                    type="email" variant="filled"  onChange={handleChange}
-                /><br/> */}
+                
                 </DialogContent>
                 <DialogActions>
                     <ThemeProvider theme={theme}>
