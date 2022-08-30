@@ -37,21 +37,20 @@ function AddCar(props){
              <Dialog open={open} onClose={handleClose} maxWidth='xs' fullWidth='true'>
                 <DialogTitle>New Car</DialogTitle>
                 <DialogContent>
-                <Stack spacing={2} mt={1}>
-                    <TextField label="Brand" name="brand" 
-                    autoFocus variant='filled' value={car.brand} onChange={handleChange}/>
-                    <TextField label="Model" name="model" 
-                    variant="filled" value={car.model} onChange={handleChange}/>
-                    <TextField label="Color" name="color" 
-                    variant="filled" value={car.color} onChange={handleChange}/>
-                    <TextField label="Register Number" name="registerNumber" 
-                    variant="filled" value={car.registerNumber} onChange={handleChange}/>
-                    <TextField label="Year" name="years" 
-                    variant="filled" value={car.years} onChange={handleChange}/>
-                    <TextField label="Price" name="price" 
-                    variant="filled" value={car.price} onChange={handleChange}/>
-                </Stack>
-                
+                    <Stack spacing={2} mt={1}>
+                        <TextField label="Brand" name="brand" 
+                        autoFocus variant='filled' value={car.brand} onChange={handleChange}/>
+                        <TextField label="Model" name="model" 
+                        variant="filled" value={car.model} onChange={handleChange}/>
+                        <TextField label="Color" name="color" 
+                        variant="filled" value={car.color} onChange={handleChange}/>
+                        <TextField label="Register Number" name="registerNumber" 
+                        variant="filled" value={car.registerNumber} onChange={handleChange}/>
+                        <TextField label="Year" name="years" 
+                        variant="filled" value={car.years} onChange={handleChange}/>
+                        <TextField label="Price" name="price" 
+                        variant="filled" value={car.price} onChange={handleChange}/>
+                    </Stack>
                 </DialogContent>
                 <DialogActions>
                     <ThemeProvider theme={theme}>
