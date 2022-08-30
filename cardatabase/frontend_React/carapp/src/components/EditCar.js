@@ -19,9 +19,18 @@ function EditCar(props){
     const handleChange = (event) => {
         setCar({...car, [event.target.name]: event.target.value});
     };
+    const handleSave = () => {
+
+    }
     return (
         <div>
-
+            <ThemeProvider>
+                <Button onClick={handleClickOpen} color='primary' variant="outlined"
+                size="small">Edit</Button> 
+            </ThemeProvider>
+            <Dialog>
+                <DialogTitle></DialogTitle>
+            </Dialog>
         </div>
     )
 }
