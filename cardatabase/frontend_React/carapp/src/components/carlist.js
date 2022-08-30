@@ -74,6 +74,15 @@ function CarList(){
     })
         .catch(err => console.error(err))
     }
+    const updateCar = (car, link) => {
+        fetch(link, {method: 'DELETE'})
+        .then(response => {if(response.ok){fetchCars(); setOpen(true);}
+        else {
+            alert('Something went wrong!');
+            }
+        })
+        .catch(err => console.error(err))
+    }
     return(
         <Fragment>
             <AddCar addCar={addTheCar}/><br/>
