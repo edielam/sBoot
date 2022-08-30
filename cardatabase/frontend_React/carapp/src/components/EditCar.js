@@ -50,6 +50,14 @@ function EditCar(props){
                 value={car.price}onChange={handleChange}
                 /><br/>
                 </DialogContent>
+                <DialogActions>
+                <ThemeProvider theme={theme}>
+                        <Button color='primary' variant="contained"
+                        onClick={handleClickClose} size='medium'>Cancel</Button>
+                        <Button color='primary' variant="outlined"
+                        onClick={handleSave} size='medium'>Save</Button>
+                </ThemeProvider>
+                </DialogActions>
             </Dialog>
         </div>
     )
