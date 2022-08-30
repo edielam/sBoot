@@ -34,7 +34,7 @@ function AddCar(props){
                 onClick={handleAdd} size="small">New Car
                 </Button>
             </ThemeProvider>
-             <Dialog open={open} onClose={handleClose} maxWidth='xs' fullWidth='true'>
+             <Dialog open={open} onClose={handleClose} >
                 <DialogTitle>New Car</DialogTitle>
                 <DialogContent>
                 <input placeholder="Brand" name="brand" 

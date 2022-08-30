@@ -1,7 +1,8 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { SERVER_URL } from "../constants/constants";
+import { CustomToolbar, SERVER_URL } from "../constants/constants";
 import { DataGrid} from '@mui/x-data-grid';
-import { Alert, AlertTitle, Button, Snackbar, Toolbar } from "@mui/material";
+import { Alert, AlertTitle, Button, IconButton, Snackbar, Stack} from "@mui/material";
+import DeleteIcon from '@mui/icons-material/Delete';
 import AddCar from "./addCar";
 import EditCar from "./editCar";
 
@@ -18,7 +19,7 @@ function CarList(){
         {field: 'model', headerName: 'Model', width: 200},
         {field: 'color', headerName: 'Color', width: 200},
         {field: 'registerNumber', headerName: 'Register Number', width: 200},
-        {field: 'years', headerName: 'Year', width: 150},
+        {field: 'years', headerName: 'Year', width: 200},
         {field: 'price', headerName: 'Price', width: 150},
         {
             field: '_links.car.href', 
@@ -36,9 +37,9 @@ function CarList(){
             sortable: false,
             filterable: false,
             renderCell: row => 
-            <Button color='primary' variant="contained"
-            onClick={() => onDelClick(row.id)} size="small">Delete
-            </Button>,
+            <IconButton onClick={() => onDelClick(row.id)}>
+                <DeleteIcon color='error'/>
+            </IconButton>,
              width: 150
             }
     ]
@@ -102,14 +103,15 @@ function CarList(){
        }
     return(
         <Fragment>
-            <AddCar addCar={addTheCar}/><br/>
-        
+            <Stack mt={1} mb={2} alignItems="center">
+                <AddCar addCar={addTheCar}/>
+            </Stack>
             <div  style={{ height: 500, width: '100%' }}>
             <DataGrid
             rows={cars}
             columns= {columns}
             getRowId={row => row._links.self.href}
-            components={{Toolbar : Cust}}/>
+            components={{Toolbar : CustomToolbar}}/>
             <Snackbar
             open={open}
             autoHideDuration={2500}
