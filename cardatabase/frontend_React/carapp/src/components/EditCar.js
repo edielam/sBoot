@@ -11,6 +11,14 @@ function EditCar(props){
         years: '', price: ''
     });
     const handleClickOpen = () => {
+        setCar({
+            brand: props.data.row.brand,
+            model: props.data.row.model,
+            color: props.data.row.color,
+            year: props.data.row.year,
+            fuel: props.data.row.fuel,
+            price: props.data.row.price 
+            })
         setOpen(true);
     };
     const handleClickClose = () => {
