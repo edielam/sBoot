@@ -38,7 +38,7 @@ function EditCar(props){
             <IconButton onClick={handleClickOpen}>
                 <EditIcon color="primary"/>
             </IconButton>
-            <Dialog  open={open} onClose={handleClickClose}>
+            <Dialog  open={open} onClose={handleClickClose} maxWidth='xs' fullWidth='true'>
                 <DialogTitle>Change Car Details</DialogTitle>
                 <DialogContent>
                     <Stack spacing={2} mt={1}>
