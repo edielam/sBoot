@@ -15,7 +15,8 @@ function EditCar(props){
             brand: props.data.row.brand,
             model: props.data.row.model,
             color: props.data.row.color,
-            year: props.data.row.year,
+            registerNumber: props.data.row.registerNumber,
+            years: props.data.row.years,
             fuel: props.data.row.fuel,
             price: props.data.row.price 
             })
@@ -28,7 +29,8 @@ function EditCar(props){
         setCar({...car, [event.target.name]: event.target.value});
     };
     const handleSave = () => {
-
+        props.updateCar(car, props.data.id);
+        handleClickClose();
     }
     return (
         <div>
