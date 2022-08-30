@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { SERVER_URL } from "../constants/constants";
 import { DataGrid} from '@mui/x-data-grid';
-import { Alert, AlertTitle, Button, Snackbar } from "@mui/material";
+import { Alert, AlertTitle, Button, Snackbar, Toolbar } from "@mui/material";
 import AddCar from "./addCar";
 import EditCar from "./editCar";
 
@@ -108,7 +108,8 @@ function CarList(){
             <DataGrid
             rows={cars}
             columns= {columns}
-            getRowId={row => row._links.self.href}/>
+            getRowId={row => row._links.self.href}
+            components={{Toolbar : Cust}}/>
             <Snackbar
             open={open}
             autoHideDuration={2500}
