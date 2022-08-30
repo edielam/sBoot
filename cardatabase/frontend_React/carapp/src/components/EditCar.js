@@ -9,13 +9,16 @@ function EditCar(props){
     const [car, setCar] = useState({
         brand: '', model: '', color: '', registerNumber: '',
         years: '', price: ''
-    })
+    });
     const handleClickOpen = () => {
         setOpen(true);
-    }
+    };
     const handleClickClose = () => {
         setOpen(false);
-    }
+    };
+    const handleChange = (event) => {
+        setCar({...car, [event.target.name]: event.target.value});
+    };
     return (
         <div>
 
