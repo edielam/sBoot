@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Dialog, DialogContent,
-     DialogTitle, DialogActions, Button, ThemeProvider, TextField } from "@mui/material";
+     DialogTitle, DialogActions, Button, ThemeProvider, TextField, Stack } from "@mui/material";
 import { theme } from "../constants/constants";
 
 
@@ -34,28 +34,23 @@ function AddCar(props){
                 onClick={handleAdd} size="small">New Car
                 </Button>
             </ThemeProvider>
-             <Dialog open={open} onClose={handleClose} >
+             <Dialog open={open} onClose={handleClose} maxWidth='xs' fullWidth='true'>
                 <DialogTitle>New Car</DialogTitle>
                 <DialogContent>
-                <input placeholder="Brand" name="brand" 
-                value={car.brand} onChange={handleChange}
-                /><br/> 
-                <input placeholder="Model" name="model" 
-                value={car.model} onChange={handleChange}
-                /><br/>
-                <input placeholder="Color" name="color" 
-                value={car.color} onChange={handleChange}/>
-                <br/>
-                <input placeholder="Register Number" name="registerNumber" 
-                value={car.year} onChange={handleChange}/>
-                <br/>
-                <input placeholder="Year" name="years" 
-                value={car.year} onChange={handleChange}/>
-                <br/>
-                <input placeholder="Price" name="price" 
-                value={car.price} onChange={handleChange}/>
-                <br/>
-                
+                <Stack spacing={2} mt={1}>
+                    <TextField label="Brand" name="brand" 
+                    autoFocus variant='filled' value={car.brand} onChange={handleChange}/>
+                    <TextField label="Model" name="model" 
+                    variant="standard" value={car.model} onChange={handleChange}/>
+                    <TextField label="Color" name="color" 
+                    variant="standard" value={car.color} onChange={handleChange}/>
+                    <TextField label="Register Number" name="registerNumber" 
+                    variant="standard" value={car.registerNumber} onChange={handleChange}/>
+                    <TextField label="Year" name="years" 
+                    variant="standard" value={car.years} onChange={handleChange}/>
+                    <TextField label="Price" name="price" 
+                    variant="standard" value={car.price} onChange={handleChange}/>
+                </Stack>
                 {/* <TextField autoFocus
                     margin="normal" value={car.brand} fullWidth label="Brand"
                     type="email" variant="filled"  onChange={handleChange}
