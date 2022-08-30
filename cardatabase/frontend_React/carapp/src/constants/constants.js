@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material";
+import { gridClasses, GridToolbarContainer, GridToolbarExport } from "@mui/x-data-grid";
 
 export const SERVER_URL='http://localhost:8080/';
 export const theme = createTheme({
@@ -16,3 +17,12 @@ export const theme = createTheme({
         },
     },
 });
+
+export function CustomToolbar() {
+    return (
+    <GridToolbarContainer 
+    className={gridClasses.toolbarContainer}>
+    <GridToolbarExport />
+    </GridToolbarContainer>
+    );
+   }
