@@ -41,9 +41,9 @@ function AddCar(props){
                     <TextField label="Brand" name="brand" 
                     autoFocus variant='filled' value={car.brand} onChange={handleChange}/>
                     <TextField label="Model" name="model" 
-                    variant="standard" value={car.model} onChange={handleChange}/>
+                    variant="filled" value={car.model} onChange={handleChange}/>
                     <TextField label="Color" name="color" 
-                    variant="standard" value={car.color} onChange={handleChange}/>
+                    variant="filled" value={car.color} onChange={handleChange}/>
                     <TextField label="Register Number" name="registerNumber" 
                     variant="standard" value={car.registerNumber} onChange={handleChange}/>
                     <TextField label="Year" name="years" 
