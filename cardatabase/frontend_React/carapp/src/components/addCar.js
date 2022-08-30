@@ -45,11 +45,11 @@ function AddCar(props){
                     <TextField label="Color" name="color" 
                     variant="filled" value={car.color} onChange={handleChange}/>
                     <TextField label="Register Number" name="registerNumber" 
-                    variant="standard" value={car.registerNumber} onChange={handleChange}/>
+                    variant="filled" value={car.registerNumber} onChange={handleChange}/>
                     <TextField label="Year" name="years" 
-                    variant="standard" value={car.years} onChange={handleChange}/>
+                    variant="filled" value={car.years} onChange={handleChange}/>
                     <TextField label="Price" name="price" 
-                    variant="standard" value={car.price} onChange={handleChange}/>
+                    variant="filled" value={car.price} onChange={handleChange}/>
                 </Stack>
                 
                 </DialogContent>
