@@ -3,6 +3,7 @@ import { SERVER_URL } from "../constants/constants";
 import { DataGrid} from '@mui/x-data-grid';
 import { Alert, AlertTitle, Button, Snackbar } from "@mui/material";
 import AddCar from "./addCar";
+import EditCar from "./EditCar";
 
 function CarList(){
     const [cars, setCars] = useState([]);
@@ -19,6 +20,14 @@ function CarList(){
         {field: 'registerNumber', headerName: 'Register Number', width: 200},
         {field: 'years', headerName: 'Year', width: 200},
         {field: 'price', headerName: 'Price', width: 200},
+        {
+            field: '_links.self.href', 
+            headerName: '', 
+            sortable: false,
+            filterable: false,
+            renderCell: row => 
+            <EditCar data={row} updateCar={updateCar}/>
+        },
         {
             field: '_links.self.href', 
             headerName: '', 
@@ -75,7 +84,7 @@ function CarList(){
         .catch(err => console.error(err))
     }
     const updateCar = (car, link) => {
-        fetch(link, {method: 'DELETE'})
+        fetch(link, {method: 'PUT'})
         .then(response => {if(response.ok){fetchCars(); setOpen(true);}
         else {
             alert('Something went wrong!');
