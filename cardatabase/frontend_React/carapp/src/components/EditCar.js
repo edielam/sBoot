@@ -24,11 +24,8 @@ function EditCar(props){
     }
     return (
         <div>
-            <ThemeProvider>
-                <Button onClick={handleClickOpen} color='primary' variant="outlined"
-                size="small">Edit</Button> 
-            </ThemeProvider>
-            <Dialog>
+            <button onClick={handleClickOpen}>Edit</button>
+            <Dialog  open={open} onClose={handleClickClose}>
                 <DialogTitle>Change Car Details</DialogTitle>
                 <DialogContent>
                 <input placeholder="Brand" name="brand" 

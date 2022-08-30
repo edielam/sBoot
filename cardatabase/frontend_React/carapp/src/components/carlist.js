@@ -3,7 +3,7 @@ import { SERVER_URL } from "../constants/constants";
 import { DataGrid} from '@mui/x-data-grid';
 import { Alert, AlertTitle, Button, Snackbar } from "@mui/material";
 import AddCar from "./addCar";
-import EditCar from "./EditCar";
+import EditCar from "./editCar";
 
 function CarList(){
     const [cars, setCars] = useState([]);
@@ -18,16 +18,18 @@ function CarList(){
         {field: 'model', headerName: 'Model', width: 200},
         {field: 'color', headerName: 'Color', width: 200},
         {field: 'registerNumber', headerName: 'Register Number', width: 200},
-        {field: 'years', headerName: 'Year', width: 200},
-        {field: 'price', headerName: 'Price', width: 200},
+        {field: 'years', headerName: 'Year', width: 150},
+        {field: 'price', headerName: 'Price', width: 150},
         {
-            field: '_links.self.href', 
+            field: '_links.car.href', 
             headerName: '', 
             sortable: false,
             filterable: false,
             renderCell: row => 
-            <EditCar data={row} updateCar={updateCar}/>
-        },
+            <EditCar 
+            data={row} 
+            updateCar={updateCar} />
+            },
         {
             field: '_links.self.href', 
             headerName: '', 
@@ -84,17 +86,24 @@ function CarList(){
         .catch(err => console.error(err))
     }
     const updateCar = (car, link) => {
-        fetch(link, {method: 'PUT'})
-        .then(response => {if(response.ok){fetchCars(); setOpen(true);}
-        else {
+        fetch(link,
+        { 
+        method: 'PUT', 
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(car)
+        })
+        .then(response => { if (response.ok) {
+            fetchCars();
+        } else {
             alert('Something went wrong!');
             }
         })
         .catch(err => console.error(err))
-    }
+       }
     return(
         <Fragment>
             <AddCar addCar={addTheCar}/><br/>
+        
             <div  style={{ height: 500, width: '100%' }}>
             <DataGrid
             rows={cars}
