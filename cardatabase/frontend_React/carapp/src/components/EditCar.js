@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Dialog, DialogContent,
-     DialogTitle, DialogActions, Button, ThemeProvider} from "@mui/material";
+     DialogTitle, DialogActions, Button, ThemeProvider, IconButton} from "@mui/material";
 import { theme } from "../constants/constants";
+import EditIcon from '@mui/icons-material/Edit';
 
 
 function EditCar(props){
@@ -34,7 +35,9 @@ function EditCar(props){
     }
     return (
         <div>
-            <button onClick={handleClickOpen}>Edit</button>
+            <IconButton onClick={handleClickOpen}>
+                <EditIcon color="primary"/>
+            </IconButton>
             <Dialog  open={open} onClose={handleClickClose}>
                 <DialogTitle>Change Car Details</DialogTitle>
                 <DialogContent>
