@@ -6,7 +6,10 @@ import { theme } from "../constants/constants";
 
 function EditCar(props){
     const [open, setOpen] = useState(false);
-    const []
+    const [car, setCar] = useState({
+        brand: '', model: '', color: '', registerNumber: '',
+        years: '', price: ''
+    })
     return (
         <div>
 
