@@ -29,7 +29,10 @@ function EditCar(props){
                 size="small">Edit</Button> 
             </ThemeProvider>
             <Dialog>
-                <DialogTitle></DialogTitle>
+                <DialogTitle>Change Car Details</DialogTitle>
+                <DialogContent>
+                    
+                </DialogContent>
             </Dialog>
         </div>
     )
