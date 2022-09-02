@@ -9,5 +9,7 @@ test('renders learn react link', () => {
 
 test('open add car modal form', () => {
   render(<App/>);
-  fireEvent.click(screen.getByText('NEW CAR'))
+  fireEvent.click(screen.getByText('NEW CAR'));
+  expect(screen.getByRole('dialog')).toHaveTextContent
+  ('New car');
 });
