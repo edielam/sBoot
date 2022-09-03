@@ -13,7 +13,13 @@ function Login() {
         setUser({...user, 
             [event.target.name] : event.target.value});
     }
-
+    const login = () => {
+        fetch(SERVER_URL + 'login', {
+            method: 'POST',
+            headers: { 'Content-Type':'application/json' },
+            body: JSON.stringify(user)
+        })
+    }
     return (
         <div>
             <Stack  spacing={2} alignItems='center' mt={2}>
