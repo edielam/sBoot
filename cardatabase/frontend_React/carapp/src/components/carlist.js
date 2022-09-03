@@ -45,7 +45,10 @@ function CarList(){
     ]
 
     const fetchCars= () => {
-        fetch(SERVER_URL + 'api/cars')
+        const token = sessionStorage.getItem("jwt");
+        fetch(SERVER_URL + 'api/cars', {
+            headers: { 'Authorization' : token }
+            })
         .then(response => response.json())
         .then(data => setCars(data._embedded.cars))
         .catch(err => console.error(err));
