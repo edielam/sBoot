@@ -1,4 +1,4 @@
-import { Button, TextField } from "@mui/material";
+import { Button, Snackbar, TextField } from "@mui/material";
 import { Stack } from "@mui/system";
 import React, { useState } from "react";
 import { SERVER_URL } from "../constants/constants";
@@ -27,11 +27,18 @@ function Login() {
             sessionStorage.setItem("jwt", jwtToken);
             setAuth(true);
             }
+        else {
+            setOpen(true);
+        }
         })
         .catch(err => console.error(err))
        }
 
     const [open, setOpen] = useState(false);
+    const log = () => {
+        sessionStorage.removeItem("jwt");
+        setAuth(false);
+       }
     // const login = () => {
     //     fetch(SERVER_URL + 'login', {
     //         method: 'POST',
@@ -49,7 +56,16 @@ function Login() {
     // }
     
     if(isAuthenticated){
-        return <CarList/>;
+        return (
+        <div>
+            <CarList/>
+            <Stack mt={1} mb={2} alignItems="center">
+                <Button
+                    variant="outlined"
+                    color="primary"
+                    onClick={log}>Logout</Button>
+            </Stack>
+        </div>);
     }
     else{
         return (
@@ -69,6 +85,11 @@ function Login() {
                         onClick={login}>
                         Login</Button>
                 </Stack>
+                <Snackbar open={open}
+                    autoHideDuration={3000}
+                    onClose={() => setOpen(false)}
+                    message="Login failed: Check your username and 
+                    password" />
             </div>
         )
     }
