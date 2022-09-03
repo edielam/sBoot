@@ -9,16 +9,19 @@ function Login() {
         password: ''
     });
     const [isAuthenticated, setAuth] = useState(false);
+    const handleChange = () => {}
 
     return (
         <div>
             <Stack  spacing={2} alignItems='center' mt={2}>
-                <TextField>
-                    
-                </TextField>
-                <TextField>
-
-                </TextField>
+                <TextField
+                    name="username"
+                    label="Username"
+                    onChange={handleChange}/>
+                <TextField
+                    name="password"
+                    label="Password"
+                    onChange={handleChange}/>
                 <Button>
                     Login</Button>
             </Stack>
