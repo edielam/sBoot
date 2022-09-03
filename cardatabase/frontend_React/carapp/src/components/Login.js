@@ -20,15 +20,32 @@ function Login() {
             headers: { 'Content-Type':'application/json' },
             body: JSON.stringify(user)
         })
-        .then(edRes => {
-            const jwToken = edRes.headers.get('Authorization');
-            if (jwToken !== null) {
-                sessionStorage.setItem("jwt", jwToken);
-                setAuth(true);
+        .then(res => {
+            const jwtToken = res.headers.get
+            ('Authorization');
+        if (jwtToken !== null) {
+            sessionStorage.setItem("jwt", jwtToken);
+            setAuth(true);
             }
         })
-        .catch(err) = console.error(err)
-    }
+        .catch(err => console.error(err))
+       }
+    // const login = () => {
+    //     fetch(SERVER_URL + 'login', {
+    //         method: 'POST',
+    //         headers: { 'Content-Type':'application/json' },
+    //         body: JSON.stringify(user)
+    //     })
+    //     .then(edRes => {
+    //         const jwtToken = edRes.headers.get('Authorization');
+    //         if (jwToken !== null) {
+    //             sessionStorage.setItem("jwt", jwToken);
+    //             setAuth(true);
+    //         }
+    //     })
+    //     .catch(err) = console.error(err)
+    // }
+    
     if(isAuthenticated){
         return <CarList/>;
     }
