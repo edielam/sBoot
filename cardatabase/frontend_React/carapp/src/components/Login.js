@@ -2,6 +2,7 @@ import { Button, TextField } from "@mui/material";
 import { Stack } from "@mui/system";
 import React, { useState } from "react";
 import { SERVER_URL } from "../constants/constants";
+import CarList from "./carlist";
 
 function Login() {
     const [user, setUser] = useState({
@@ -21,31 +22,37 @@ function Login() {
         })
         .then(edRes => {
             const jwToken = edRes.headers.get('Authorization');
-            if (jwtToken !== null) {
-                sessionStorage.setItem("jwt", jwtToken);
+            if (jwToken !== null) {
+                sessionStorage.setItem("jwt", jwToken);
                 setAuth(true);
             }
         })
+        .catch(err) = console.error(err)
     }
-    return (
-        <div>
-            <Stack  spacing={2} alignItems='center' mt={2}>
-                <TextField
-                    name="username"
-                    label="Username"
-                    onChange={handleChange}/>
-                <TextField
-                    name="password"
-                    label="Password"
-                    onChange={handleChange}/>
-                <Button
-                    variant="outlined"
-                    color="secondary"
-                    onClick={login}>
-                    Login</Button>
-            </Stack>
-        </div>
-    )
+    if(isAuthenticated){
+        return <CarList/>;
+    }
+    else{
+        return (
+            <div>
+                <Stack  spacing={2} alignItems='center' mt={2}>
+                    <TextField
+                        name="username"
+                        label="Username"
+                        onChange={handleChange}/>
+                    <TextField
+                        name="password"
+                        label="Password"
+                        onChange={handleChange}/>
+                    <Button
+                        variant="outlined"
+                        color="secondary"
+                        onClick={login}>
+                        Login</Button>
+                </Stack>
+            </div>
+        )
+    }
 }
 
 export default Login;
