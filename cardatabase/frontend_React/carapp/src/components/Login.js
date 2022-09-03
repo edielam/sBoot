@@ -30,6 +30,8 @@ function Login() {
         })
         .catch(err => console.error(err))
        }
+
+    const [open, setOpen] = useState(false);
     // const login = () => {
     //     fetch(SERVER_URL + 'login', {
     //         method: 'POST',
