@@ -61,9 +61,10 @@ function CarList(){
     }, []);
     
     const onDelClick =(url) => {
-        const token = sessionStorage.getItem("jwt");
         if (window.confirm("Please Confirm")) {
-            fetch(url, {method: 'DELETE'},{
+            const token = sessionStorage.getItem("jwt");
+            fetch(url, {
+                method: 'DELETE',
                 headers: { 'Authorization' : token }
                 })
             .then(response => {if(response.ok){fetchCars(); setOpen(true);}
