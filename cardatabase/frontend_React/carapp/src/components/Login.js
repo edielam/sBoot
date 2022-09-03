@@ -19,6 +19,13 @@ function Login() {
             headers: { 'Content-Type':'application/json' },
             body: JSON.stringify(user)
         })
+        .then(edRes => {
+            const jwToken = edRes.headers.get('Authorization');
+            if (jwtToken !== null) {
+                sessionStorage.setItem("jwt", jwtToken);
+                setAuth(true);
+            }
+        })
     }
     return (
         <div>
