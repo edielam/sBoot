@@ -1,3 +1,5 @@
+import { TextField } from "@mui/material";
+import { Stack } from "@mui/system";
 import React, { useState } from "react";
 import { SERVER_URL } from "../constants/constants";
 
@@ -10,7 +12,15 @@ function Login() {
 
     return (
         <div>
+            <Stack  spacing={2} alignItems='center' mt={2}>
+                <TextField>
 
+                </TextField>
+                <TextField>
+
+                </TextField>
+                <
+            </Stack>
         </div>
     )
 }
