@@ -9,7 +9,10 @@ import EditCar from "./editCar";
 function CarList(){
     const [cars, setCars] = useState([]);
     useEffect(() => {
-        fetch(SERVER_URL + 'api/cars')
+        const token = sessionStorage.getItem("jwt");
+        fetch(SERVER_URL + 'api/cars',{
+            headers: { 'Authorization' : token }
+            })
         .then(response => response.json())
         .then(data => setCars(data._embedded.cars))
         .catch(err => console.error(err));
@@ -58,8 +61,11 @@ function CarList(){
     }, []);
     
     const onDelClick =(url) => {
+        const token = sessionStorage.getItem("jwt");
         if (window.confirm("Please Confirm")) {
-            fetch(url, {method: 'DELETE'})
+            fetch(url, {method: 'DELETE'},{
+                headers: { 'Authorization' : token }
+                })
             .then(response => {if(response.ok){fetchCars(); setOpen(true);}
             else {
                 alert('Something went wrong!');
@@ -70,10 +76,11 @@ function CarList(){
     }
     const [open, setOpen] = useState(false);
     const addTheCar = (car) => {
+        const token = sessionStorage.getItem("jwt");
         fetch(SERVER_URL + 'api/cars',
         {
         method: 'POST', 
-        headers: { 'Content-Type':'application/json' },
+        headers: { 'Content-Type':'application/json', 'Authorization' : token },
         body: JSON.stringify(car)
         })
         .then(response => {
