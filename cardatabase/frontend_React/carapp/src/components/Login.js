@@ -9,7 +9,10 @@ function Login() {
         password: ''
     });
     const [isAuthenticated, setAuth] = useState(false);
-    const handleChange = () => {}
+    const handleChange = (event) => {
+        setUser({...user, 
+            [event.target.name] : event.target.value});
+    }
 
     return (
         <div>
@@ -22,7 +25,10 @@ function Login() {
                     name="password"
                     label="Password"
                     onChange={handleChange}/>
-                <Button>
+                <Button
+                    variant="outlined"
+                    color="secondary"
+                    onClick={login}>
                     Login</Button>
             </Stack>
         </div>
