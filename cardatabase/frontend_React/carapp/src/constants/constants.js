@@ -1,7 +1,7 @@
 import { createTheme } from "@mui/material";
 import { gridClasses, GridToolbarContainer, GridToolbarExport } from "@mui/x-data-grid";
 
-export const SERVER_URL='http://localhost:8080/';
+export const SERVER_URL='https://ryd-backend.herokuapp.com/';
 export const theme = createTheme({
     status: {
         danger: '#e53e3e',
